@@ -4,14 +4,21 @@ This is a simple turtle racing game built with Python's `turtle` module. The gam
 
 ## How to Use
 
-1. Clone or download the repository
-2. Run the `main.py` file
-3. Enter the number of racers when prompted
-4. Watch the race!
+1. Clone the repository:
+- Via HTTPS: `git clone https://github.com/AlzyWelzy/turtle-racing.git`
+- Via SSH: `git clone git@github.com:AlzyWelzy/turtle-racing.git`
+2. Navigate to the cloned directory: `cd turtle-racing`
+3. Run the `main.py` file: `python main.py`
+4. Enter the number of racers when prompted
+5. Watch the race!
 
 ## Requirements
 
 This game requires Python 3 and the `turtle` module.
+
+## License
+
+This project is licensed under the AGPL license. See the `LICENSE` file for more information.
 
 ## How to Contribute
 
