@@ -17,49 +17,50 @@ COLORS = [
 ]
 
 
-def get_number_of_racers():
-    racers = 0
-    while True:
-        racers = input("Enter the number of racers (2 - 10): ")
-        if racers.isdigit():
-            racers = int(racers)
-        else:
-            print("Input is not numeric... Try Again!")
-            continue
+class TurtleRacer:
+    def __init__(self, color, position):
+        self.turtle = turtle.Turtle()
+        self.turtle.color(color)
+        self.turtle.shape("turtle")
+        self.turtle.left(90)
+        self.turtle.penup()
+        self.turtle.setpos(position)
+        self.turtle.pendown()
 
-        if 2 <= racers <= 10:
-            return racers
-        else:
-            print("Number not in range 2-10. Try Again!")
+    def move(self):
+        distance = random.randrange(1, 20)
+        self.turtle.forward(distance)
+
+    def get_position(self):
+        return self.turtle.pos()
+
+
+def get_number_of_racers():
+    while True:
+        try:
+            racers = int(input("Enter the number of racers (2 - 10): "))
+            if 2 <= racers <= 10:
+                return racers
+            else:
+                print("Number not in range 2-10. Try Again!")
+        except ValueError:
+            print("Input is not numeric... Try Again!")
 
 
 def race(colors):
-    turtles = create_turtles(colors)
-
+    racers = [
+        TurtleRacer(
+            color,
+            (-WIDTH // 2 + (i + 1) * (WIDTH // (len(colors) + 1)), -HEIGHT // 2 + 20),
+        )
+        for i, color in enumerate(colors)
+    ]
     while True:
-        for racer in turtles:
-            distance = random.randrange(1, 20)
-            racer.forward(distance)
-
-            x, y = racer.pos()
+        for racer in racers:
+            racer.move()
+            x, y = racer.get_position()
             if y >= HEIGHT // 2 - 10:
-                return colors[turtles.index(racer)]
-
-
-def create_turtles(colors):
-    turtles = []
-    spacingx = WIDTH // (len(colors) + 1)
-    for i, color in enumerate(colors):
-        racer = turtle.Turtle()
-        racer.color(color)
-        racer.shape("turtle")
-        racer.left(90)
-        racer.penup()
-        racer.setpos(-WIDTH // 2 + (i + 1) * spacingx, -HEIGHT // 2 + 20)
-        racer.pendown()
-        turtles.append(racer)
-
-    return turtles
+                return colors[racers.index(racer)]
 
 
 def init_turtle():
