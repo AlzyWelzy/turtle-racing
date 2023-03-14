@@ -2,10 +2,6 @@ import turtle
 
 WIDTH, HEIGHT = 500, 500
 
-screen = turtle.Screen()
-screen.setup(WIDTH, HEIGHT)
-screen.title("Turtle Racing")
-
 
 def get_number_of_racers():
     racers = 0
@@ -24,5 +20,11 @@ def get_number_of_racers():
             continue
 
 
+def init_turtle():
+    screen = turtle.Screen()
+    screen.setup(WIDTH, HEIGHT)
+    screen.title("Turtle Racing")
+
+
 racers = get_number_of_racers()
-print(racers)
+init_turtle()
