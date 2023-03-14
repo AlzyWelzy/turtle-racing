@@ -28,3 +28,6 @@ def init_turtle():
 
 racers = get_number_of_racers()
 init_turtle()
+
+racer = turtle.Turtle()
+racer.forward(100)
