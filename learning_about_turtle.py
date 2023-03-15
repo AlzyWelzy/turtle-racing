@@ -31,6 +31,24 @@ racers = get_number_of_racers()
 init_turtle()
 
 racer = turtle.Turtle()
+# racer.forward(100)
+# racer.left(108)
+# racer.forward(138)
+# racer.back(18)
+# racer.right(97)
+# racer.forward(100)
+
+# Make the turtle run in a loop
+
+# Create a spiral through turtle movements
+for i in range(10000000):
+    racer.color("grey")
+    racer.speed(0)
+    racer.shape("turtle")
+    racer.forward(i)
+    racer.pendown()
+    racer.penup()
+    racer.left(90)
 
 
-time.sleep(5)
+# time.sleep(5)
