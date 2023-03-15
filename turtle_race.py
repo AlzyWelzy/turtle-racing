@@ -43,7 +43,7 @@ racer = turtle.Turtle()
 # Create a spiral through turtle movements
 for i in range(10000000):
     racer.forward(i)
-    racer.left(91)
+    racer.left(90)
 
 
 # time.sleep(5)
