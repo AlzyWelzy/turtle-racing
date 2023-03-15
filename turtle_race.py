@@ -1,4 +1,5 @@
 import turtle
+import time
 
 WIDTH, HEIGHT = 500, 500
 
@@ -30,4 +31,21 @@ racers = get_number_of_racers()
 init_turtle()
 
 racer = turtle.Turtle()
-racer.forward(100)
+# racer.forward(100)
+# racer.left(108)
+# racer.forward(138)
+# racer.back(18)
+# racer.right(97)
+# racer.forward(100)
+
+# Make the turtle run in a loop
+
+# Create a spiral through turtle movements
+i = 0
+while True:
+    racer.forward(i)
+    racer.left(90)
+    i += 1
+
+
+# time.sleep(5)
