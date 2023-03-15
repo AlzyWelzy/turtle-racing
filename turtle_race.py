@@ -42,8 +42,12 @@ racer = turtle.Turtle()
 
 # Create a spiral through turtle movements
 for i in range(10000000):
+    racer.color("grey")
     racer.speed(0)
+    racer.shape("turtle")
     racer.forward(i)
+    racer.pendown()
+    racer.penup()
     racer.left(90)
 
 
