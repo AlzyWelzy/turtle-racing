@@ -38,7 +38,7 @@ def race(colors):
 
     while True:
         for racer in turtles:
-            distance = random.randrange(1, 100)
+            distance = random.randrange(1, 10)
             racer.forward(distance)
 
             x, y = racer.pos()
